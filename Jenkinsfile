@@ -10,9 +10,9 @@ node {
       
       withEnv(["var2=$var1"]) {
          if (isUnix()) {
-            sh '"$var2/bin/mvn"  clean package'
+            sh '"$var2/bin/mvn" -DskipTests clean package'
          } else {
-            bat(/"%var2%\bin\mvn"  clean package/)
+            bat(/"%var2%\bin\mvn" -DskipTests clean package/)
          }
       }
    }
